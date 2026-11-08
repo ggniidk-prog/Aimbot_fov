@@ -1,6 +1,6 @@
 local teamCheck = false
-local fov = 150
-local smoothing = 1
+local fov = 60 -- fov
+local smoothing = 1 -- smoothing
 
 local RunService = game:GetService("RunService")
 
@@ -11,7 +11,12 @@ FOVring.Radius = fov
 FOVring.Transparency = 1
 FOVring.Color = Color3.fromRGB(255, 128, 128)
 FOVring.Position = workspace.CurrentCamera.ViewportSize/2
-
+local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCore("SendNotification", {
+   Title = "Aimbot v1";
+   Text = "Aimbot loaded!";
+   Duration = 3;
+})
 local function getClosest(cframe)
    local ray = Ray.new(cframe.Position, cframe.LookVector).Unit
    
